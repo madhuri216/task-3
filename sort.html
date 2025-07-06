@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Listing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f4ff; /* 🌸 Light lavender background */
+    }
+
+    h2 {
+      padding: 20px;
+      margin: 0;
+    }
+
+    #productContainer {
+      background: #ffffff;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .controls {
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ffecd2, #fcb69f); /* 🍑 Stylish background */
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    select {
+      padding: 10px;
+      margin-right: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 15px 0;
+      background: #fefefe;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <h2>🛍 Product Listing</h2>
+
+  <div id="productContainer">
+    <div class="controls">
+      <label>Category:</label>
+      <select id="categoryFilter" onchange="filterProducts()">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+      </select>
+
+      <label>Sort by:</label>
+      <select id="sortOption" onchange="filterProducts()">
+        <option value="priceLowHigh">Price: Low to High</option>
+        <option value="priceHighLow">Price: High to Low</option>
+        <option value="ratingHigh">Rating: High to Low</option>
+      </select>
+    </div>
+
+    <div id="productList"></div>
+  </div>
+
+  <script>
+    const products = [
+      { name: "Smartphone", category: "electronics", price: 25000, rating: 4.2 },
+      { name: "Jeans", category: "clothing", price: 1200, rating: 3.8 },
+      { name: "Laptop", category: "electronics", price: 55000, rating: 4.5 },
+      { name: "T-shirt", category: "clothing", price: 600, rating: 4.1 },
+    ];
+
+    function filterProducts() {
+      const category = document.getElementById("categoryFilter").value;
+      const sortOption = document.getElementById("sortOption").value;
+
+      let filtered = products.filter(p => category === "all" || p.category === category);
+
+      if (sortOption === "priceLowHigh") {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortOption === "priceHighLow") {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sortOption === "ratingHigh") {
+        filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      const list = document.getElementById("productList");
+      list.innerHTML = "";
+      filtered.forEach(p => {
+        list.innerHTML += `
+          <div class="product">
+            <h4>${p.name}</h4>
+            <p>Category: ${p.category}</p>
+            <p>Price: ₹${p.price}</p>
+            <p>Rating: ${p.rating}</p>
+          </div>
+        `;
+      });
+    }
+
+    filterProducts(); // Initial load
+  </script>
+</body>
+</html>

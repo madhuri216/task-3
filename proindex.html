@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhuri | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e8eaf6, #f3e5f5); /* Lavender gradient */
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #b39ddb, #ce93d8); /* Purple tones */
+      padding: 50px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    section h2 {
+      color: #7e57c2;
+      margin-bottom: 15px;
+    }
+
+    .skills i {
+      font-size: 2rem;
+      margin: 10px;
+      color: #7e57c2;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #7e57c2; /* purple button */
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #5e35b1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: #ede7f6;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .skills i {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hi, I'm Madhuri</h1>
+    <p>A creative and passionate web developer</p>
+    <div class="social-icons">
+      <a href="https://github.com/your-github" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a web developer who loves building beautiful, responsive, and meaningful websites.
+      I’m currently working on projects like an Online Voting System and creative personal tools using HTML, CSS, and JavaScript.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <i class="fab fa-html5" title="HTML5"></i>
+      <i class="fab fa-css3-alt" title="CSS3"></i>
+      <i class="fab fa-js-square" title="JavaScript"></i>
+      <i class="fab fa-git-alt" title="Git"></i>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Online Voting System</strong> – A secure voting web app using HTML, CSS, and JS.</li>
+      <li><strong>To-Do List App</strong> – A localStorage-powered task manager.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+  <h2>Contact</h2>
+  <p>You can reach me at: <a href="mailto:madhurirajana87@gmail.com">madhurirajana87@gmail.com</a></p>
+</section>
+
+  <footer>
+    &copy; 2025 Madhuri | Designed with 💜 Lavender Love
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you! I will get back to you soon.");
+      event.target.reset();
+      return false;
+    }
+  </script>
+
+</body>
+</html>
